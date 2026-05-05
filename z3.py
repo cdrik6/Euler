@@ -9,17 +9,20 @@ def isPrime(n):
         return True
     if n % 2 == 0:
         return False
-    for i in range(math.sqrt(n)):
+    for i in range(3, int(n**0.5) + 1, 2):
         if n % i == 0:
             return False
     return True
 
+# def is_prime(n):
+#    return n > 1 and all(n % i for i in range(2, int(n**0.5) + 1))
+
+
 def main():
-    print
-
-
-
-
+    n = 600851475143
+    for i in range(math.isqrt(n), 1, -1):
+        if n % i == 0 and isPrime(i):
+            return print(f"{i}")
 
 if __name__ == "__main__":
     main()
